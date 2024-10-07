@@ -1,0 +1,23 @@
+.container{
+    font-style: italic;
+}
+
+.itallic{
+    font-style: italic;
+}
+
+.oblique{
+    font-style: oblique;
+}
+
+.normal{
+    font-style: normal;
+}
+
+.sub-container2 .small-caps{
+    font-variant: small-caps;
+}
+
+.sub-container2 .normal{
+    font-variant: normal;
+}
