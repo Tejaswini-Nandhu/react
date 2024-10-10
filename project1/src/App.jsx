@@ -14,17 +14,15 @@ const Content = (props) => {
   );
 }
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
-    <>
+    <div class="container">
       <h1>Python Programing</h1>
-      <ul>
-        <Content title={Concepts[0].title} description={Concepts[0].description}/>
-        <Content title={Concepts[1].title} description={Concepts[1].description}/>
-        <Content title={Concepts[2].title} description={Concepts[2].description} level={Concepts[2].level}/>
-      </ul>
-    </>
+      <Content title={Concepts[0].title} description={Concepts[0].description}/>
+      <Content title={Concepts[1].title} description={Concepts[1].description}/>
+      <Content title={Concepts[2].title} description={Concepts[2].description} level={Concepts[2].level}/>
+    </div>
   )
 }
 

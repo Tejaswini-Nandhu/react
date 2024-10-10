@@ -1,0 +1,125 @@
+*{
+    margin:0;
+    padding:0;
+}
+.heading{
+    text-align: center;
+    padding:10px;
+    background-color:blanchedalmond;
+}
+
+.container1{
+    max-width:80%;
+    margin:auto;
+    background-color:aquamarine;
+    text-align:center;
+    padding:30px;
+    border-radius: 20px;
+}
+
+.container2{
+    max-width:80%;
+    margin:auto;
+    background-color:rgb(245, 197, 126);
+    text-align:center;
+    padding:30px;
+    border-radius: 20px;
+}
+
+.container3{
+    max-width:80%;
+    margin:auto;
+    background-color:rgb(255, 223, 174);
+    text-align:center;
+    padding:30px;
+    border-radius: 20px;
+}
+
+.container4{
+    max-width:80%;
+    margin:auto;
+    background-color:rgb(145, 255, 249);
+    text-align:center;
+    padding:30px;
+    border-radius: 20px;
+}
+
+.container5{
+    max-width:80%;
+    margin:auto;
+    background-color:rgb(184, 194, 252);
+    text-align:center;
+    padding:30px;
+    border-radius: 20px;
+}
+
+.div-1{
+    border:2px solid black;
+    display:inline-block;
+    margin:2px;
+    padding:10px;
+}
+
+.div-2{
+    border:2px solid red;
+    display:inline-block;
+    margin:2px;
+    padding:10px;
+}
+
+.div-3{
+    border:2px solid black;
+    display:block;
+    margin:2px;
+    padding:10px;
+}
+
+.div-4{
+    border:2px solid red;
+    display:block;
+    margin:2px;
+    padding:10px;
+}
+
+.div-5{
+    border:2px solid black;
+    display:flex;
+    margin:2px;
+    padding:10px;
+}
+
+.div-6{
+    border:2px solid red;
+    display:flex;
+    margin:2px;
+    padding:10px;
+}
+
+.div-7{
+    border:2px solid black;
+    display:grid;
+    margin:2px;
+    padding:10px;
+}
+
+.div-8{
+    border:2px solid red;
+    display:grid;
+    margin:2px;
+    padding:10px;
+}
+
+.text1{display: inline-block;}
+.text2{display: block;}
+.text3{display: flex;}
+.text4{display: grid;}
+
+.container5 p:first-child{
+    display:inline;
+    background-color: thistle;
+}
+
+.container5 p:last-child{
+    display:inline;
+    background-color: rgb(153, 153, 153);
+}
