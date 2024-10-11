@@ -1,29 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { Concepts } from './Content.jsx';
+import { useState, useEffect } from "react";
+import "./App.css";
 
-const Content = (props) => {
-  return(
-      <div class="component1">
-          <h2>{props.title}</h2>
-          <p>{props.description}</p>
-          <p>{props.level}</p>
-      </div>
-  );
-}
 function App() {
-  
+    const [time, setTime] = useState(0);
+    const [isRunning, setIsRunning] = useState(false);
+    useEffect(() => {
+        let interval;
+        if (isRunning) {
+            interval = setInterval(()=> {
+                setTime((prevTime) => prevTime + 1);
+            }, 1000);
+        }
+        return () => clearInterval(interval);
+    }, [isRunning]);
 
-  return (
-    <div class="container">
-      <h1>Python Programing</h1>
-      <Content title={Concepts[0].title} description={Concepts[0].description}/>
-      <Content title={Concepts[1].title} description={Concepts[1].description}/>
-      <Content title={Concepts[2].title} description={Concepts[2].description} level={Concepts[2].level}/>
-    </div>
-  )
+    const handleStartStop = () => {
+        setIsRunning(!isRunning);
+    };
+
+    
+    const handleReset = () => {
+        setIsRunning(false);
+        setTime(0);
+    };
+
+    const formatTime = (time) => {
+        const hours = Math.floor(time/3600);
+        const minutes = Math.floor(time / 60);
+        const seconds = time % 60;
+        return `${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    };
+
+    return (
+        <div id="stopwatch">
+            <h2>Welcome to StopTime...!</h2>
+            <h2 id="time">{formatTime(time)}</h2>
+
+            <div id="btn1"><button onClick={handleStartStop}>{isRunning ? "Stop" : "Start"}</button></div>
+            <div id="btn2"><button onClick={handleReset}>Reset</button></div>
+        </div>
+    );
 }
+// setInterval(()=>{
+//     setTime(time+1);
+//     console.log(time);
+// },1000);
 
-export default App
+
+export default App;
