@@ -4,11 +4,15 @@ import "./App.css";
 function App() {
     const [time, setTime] = useState(0);
     const [isRunning, setIsRunning] = useState(false);
+    console.log("time",time);
+    console.log("state of time",isRunning);
     useEffect(() => {
         let interval;
         if (isRunning) {
             interval = setInterval(()=> {
+                
                 setTime((prevTime) => prevTime + 1);
+                console.log("setTime",setTime);
             }, 1000);
         }
         return () => clearInterval(interval);

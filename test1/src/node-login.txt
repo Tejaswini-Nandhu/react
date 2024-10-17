@@ -1,0 +1,25 @@
+export const handler = async (event,context,callback) => {
+  console.log("event is", event);
+  console.log("context is", context);
+  console.log("callback is", callback);
+  
+  const email = event.email;
+  const password = event.password;
+  console.log("email entered",email);
+  console.log("password entered", password);
+  if (email === 'lol' && password === 'India'){
+    return {
+      statusCode:200,
+      body:JSON.stringify("Login successful")
+    };
+  } else {
+    return {
+      statusCode:401,
+      body:JSON.stringify({
+        message:"Login failed"
+      })
+    };
+  }
+  // TODO implement
+ 
+};
