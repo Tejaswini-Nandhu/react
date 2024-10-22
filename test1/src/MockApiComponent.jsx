@@ -19,7 +19,11 @@ const MockApiComponent = () => {
   const handleSubmit = async () => {
     try {
       // Invoke the API integrated with Lambda
-      const response = await axios.get("https://bn4htph2o4.execute-api.ap-south-1.amazonaws.com/dev/authenticate");
+      const response = await axios.post("https://bn4htph2o4.execute-api.ap-south-1.amazonaws.com/dev/authenticate",{},{
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
       console.log(response.data);
       // Set the response in state
       setContent(response.data);
