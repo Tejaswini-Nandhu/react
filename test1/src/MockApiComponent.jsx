@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-/**
- * MockApiComponent
- *
- * A component that invokes a mock API and displays the response.
- */
-
 const MockApiComponent = () => {
   const [content, setContent] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -19,14 +13,16 @@ const MockApiComponent = () => {
   const handleSubmit = async () => {
     try {
       // Invoke the API integrated with Lambda
-      const response = await axios.post("https://bn4htph2o4.execute-api.ap-south-1.amazonaws.com/dev/authenticate",{},{
+      const response = await axios.post("/api/authenticate",{},{
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'access-control-allow-origin': '*'
+          
         }
       });
-      console.log(response.data);
+      console.log("response===========",response);
       // Set the response in state
-      setContent(response.data);
+      setContent(response.data.name);
     } catch (error) {
       // Set any error messages in state
       setErrorMessage(error.message || 'An error occurred');
@@ -46,4 +42,3 @@ const MockApiComponent = () => {
 };
 
 export default MockApiComponent;
-
